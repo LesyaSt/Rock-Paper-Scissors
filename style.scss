@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+// @import url(mobile.scss);
+
+// colors
+
+$ScissorsGradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+$PaperGradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+$RockGradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+$LizardGradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+$Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+
+$DarkText: hsl(229, 25%, 31%);
+$ScoreText: hsl(229, 64%, 46%);
+$HeaderOutline: hsl(217, 16%, 45%);
+
+$RadialGradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+
+$white: #eef0f2;
+
+$circle1: #4f6bf3;
+$circle3: #eaa00b;
+$circle5: #df405e;
+
+$shadowCircle1: #2945c0;
+$shadowCircle3: #c66e1d;
+$shadowCircle5: #9c1432;
+$shadowCircle: #babfd4;
+
+// .barlow-semi-condensed-semibold-italic {
+//     font-family: "Barlow Semi Condensed", sans-serif;
+//     font-weight: 600/700;
+//     font-style: italic;
+//   }
+
+body {
+  background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+@media screen and (max-width: 1366px) and (min-width: 999px) {
+  .container {
+    // background-color: red;
+    width: 700px;
+    height: 550px;
+    position: relative;
+    top: 50px;
+    left: 23%;
+    padding: 10px;
+    .base-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid $HeaderOutline;
+      border-radius: 10px;
+      background: none;
+      // padding: 20px 0 15px 20px;
+      .rps {
+        padding: 20px 0 15px 20px;
+      }
+      .score {
+        margin-right: 20px;
+
+        height: 90px;
+        width: 100px;
+
+        background-color: $white;
+        border-radius: 10px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+          display: flex;
+          justify-content: center;
+          text-transform: uppercase;
+          color: $ScoreText;
+          font-size: 14px;
+          letter-spacing: 2px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+        input {
+          width: 60px;
+          height: 50px;
+          //     border-radius: 10px;
+          border: none;
+          font-size: 52px;
+          font-weight: 700;
+          color: $DarkText;
+          text-align: center;
+          background: none;
+        }
+      }
+    }
+
+    .game {
+      // background-color: orange;
+      width: 100%;
+      height: 350px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .do {
+        width: 500px;
+        height: 300px;
+        // background-color: bisque;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
+        .triangle {
+          width: 200px;
+          height: 150px;
+          // grid-column: 1 / 2;
+          position: absolute;
+          top: 90px;
+          left: 150px;
+          z-index: -1;
+        }
+
+        .paper {
+          // background-color: palevioletred;
+          display: flex;
+          justify-content: center;
+          .circle1 {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-color: $circle1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle1;
+            .circle2 {
+              border-radius: 50%;
+              width: 110px;
+              height: 110px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+
+              .circle-paper {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+        .scissors {
+          // background-color: salmon;
+          display: flex;
+          justify-content: center;
+          .circle3 {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-color: $circle3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle3;
+            .circle4 {
+              border-radius: 50%;
+              width: 110px;
+              height: 110px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              .circle-scissors {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+        .rock {
+          // background-color: khaki;
+          // grid-row: 2;
+          grid-column: 1 / 3;
+          display: flex;
+          justify-content: center;
+          .circle5 {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-color: $circle5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle5;
+            .circle6 {
+              border-radius: 50%;
+              width: 110px;
+              height: 110px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              .circle-scissors {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .rules {
+      width: 120px;
+      height: 40px;
+      margin: 20px;
+      right: -260px;
+      bottom: -10px;
+      position: absolute;
+      background: none;
+      border: 2px solid $HeaderOutline;
+      border-radius: 10px;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+  }
+}
+
+// mobile version
+
+@media screen and (max-width: 430px) {
+  .container {
+    // background-color: red;
+    width: 350px;
+    height: 550px;
+    position: relative;
+    top: 50px;
+    left: 10%;
+    padding: 10px;
+
+    .base-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid $HeaderOutline;
+      border-radius: 10px;
+      background: none;
+      
+      .rps {
+        padding: 20px 0 15px 20px;
+
+        .logo {
+          height: 70px;
+        }
+      }
+      .score {
+        margin-right: 20px;
+
+        height: 90px;
+        width: 100px;
+
+        background-color: $white;
+        border-radius: 10px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+          display: flex;
+          justify-content: center;
+          text-transform: uppercase;
+          color: $ScoreText;
+          font-size: 14px;
+          letter-spacing: 2px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+        input {
+          width: 60px;
+          height: 50px;
+          border: none;
+          font-size: 52px;
+          font-weight: 700;
+          color: $DarkText;
+          text-align: center;
+          background: none;
+        }
+      }
+    }
+
+    .game {
+        // background-color: orange;
+        width: 100%;
+        height: 350px;
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        .do {
+          width: 500px;
+          height: 300px;
+          // background-color: bisque;
+  
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          position: relative;
+          .triangle {
+            width: 200px;
+            height: 150px;
+            // grid-column: 1 / 2;
+            position: absolute;
+            top: 90px;
+            left: 90px;
+            z-index: -1;
+          }
+  
+          .paper {
+            // background-color: palevioletred;
+            display: flex;
+            justify-content: left;
+            width: 190px;
+            height: 160px;
+            .circle1 {
+              border-radius: 50%;
+              width: 160px;
+              height: 160px;
+              background-color: $circle1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px -5px $shadowCircle1;
+              .circle2 {
+                border-radius: 50%;
+                width: 120px;
+                height: 110px;
+                background-color: $white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 0px 5px $shadowCircle;
+  
+                .circle-paper {
+                  width: 60px;
+                  height: 60px;
+                }
+              }
+            }
+          }
+          .scissors {
+            // background-color: salmon;
+            display: flex;
+            justify-content: right;
+            width: 190px;
+            .circle3 {
+              border-radius: 50%;
+              width: 160px;
+              height: 160px;
+              background-color: $circle3;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px -5px $shadowCircle3;
+              .circle4 {
+                border-radius: 50%;
+                width: 110px;
+                height: 110px;
+                background-color: $white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 0px 5px $shadowCircle;
+                .circle-scissors {
+                  width: 60px;
+                  height: 60px;
+                }
+              }
+            }
+          }
+          .rock {
+            // background-color: khaki;
+            // grid-row: 2;
+            grid-column: 1 / 3;
+            display: flex;
+            justify-content: center;
+            // align-content: end;
+            
+            height: 180px;
+            .circle5 {
+                margin-top: 10px;
+              border-radius: 50%;
+              width: 160px;
+              height: 160px;
+              background-color: $circle5;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px -5px $shadowCircle5;
+              .circle6 {
+                border-radius: 50%;
+                width: 110px;
+                height: 110px;
+                background-color: $white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 0px 5px $shadowCircle;
+                .circle-scissors {
+                  width: 60px;
+                  height: 60px;
+                }
+              }
+            }
+          }
+        }
+      }
+    
+.button{
+display: flex;
+justify-content: center;
+
+margin-top: 150px;
+      .rules {
+        width: 150px;
+        height: 50px;
+        margin: 20px;
+        // right: -260px;
+        // bottom: -10px;
+        font-size: 22px;
+        // position: absolute;
+        background: none;
+        border: 3px solid $HeaderOutline;
+        border-radius: 10px;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+    }
+  }
+}
