@@ -265,6 +265,7 @@ body {
         align-items: center;
         h1{
             text-transform: uppercase;
+            color: $DarkText;
         }
     }
     .btn-close{
@@ -492,6 +493,44 @@ margin-top: 80px;
         letter-spacing: 2px;
         font-weight: 600;
       }
+    }
+  }
+  .window-rules {
+    position: fixed;
+    top: 250px;
+    left: 15px;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    .desktop-rules{
+        margin-top: 20px;
+        margin-left: 30px;
+        width: 300px;
+        height: 280px;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            text-transform: uppercase;
+            color: $DarkText;
+        }
+    }
+    .btn-close{
+        border: none;
+        // color: black;
+    }
+    .icon-close{
+        width: 20px;
+        height: 20px;
+        filter: black;
     }
   }
 }

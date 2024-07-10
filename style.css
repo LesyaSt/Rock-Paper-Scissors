@@ -211,6 +211,7 @@ body {
   }
   .window-rules .header h1 {
     text-transform: uppercase;
+    color: hsl(229, 25%, 31%);
   }
   .window-rules .btn-close {
     border: none;
@@ -408,5 +409,40 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
+  }
+  .window-rules {
+    position: fixed;
+    top: 250px;
+    left: 15px;
+    background-color: #eef0f2;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  .window-rules .desktop-rules {
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 300px;
+    height: 280px;
+  }
+  .window-rules .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .window-rules .header h1 {
+    text-transform: uppercase;
+    color: hsl(229, 25%, 31%);
+  }
+  .window-rules .btn-close {
+    border: none;
+  }
+  .window-rules .icon-close {
+    width: 20px;
+    height: 20px;
+    filter: black;
   }
 }/*# sourceMappingURL=style.css.map */
