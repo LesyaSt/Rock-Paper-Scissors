@@ -437,6 +437,7 @@ $circlePicked: #192845;
         letter-spacing: 2px;
         font-size: 48px;
         display: none;
+        
       }
       .draw-desktop {
         text-transform: uppercase;
@@ -445,6 +446,7 @@ $circlePicked: #192845;
         letter-spacing: 2px;
         font-size: 48px;
         display: none;
+        filter: drop-shadow(0px 0px 10px lightblue);
       }
 
       .play-again {
@@ -1046,6 +1048,7 @@ $circlePicked: #192845;
         letter-spacing: 2px;
         font-size: 48px;
         display: none;
+        filter: drop-shadow(0px 0px 10px lightblue);
       }
       .play-again {
         width: 200px;
