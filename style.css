@@ -687,6 +687,7 @@
     position: fixed;
     left: 30%;
     right: 30%;
+    bottom: 60px;
   }
   .button .rules {
     width: 150px;
