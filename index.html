@@ -1,72 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body">
+    <!-- logo and score -->
     <div class="base-info">
-        <div class="rps">
-           <img class="logo" src="images /logo.svg" alt="logo">
-        </div>
+      <div class="rps">
+        <img class="logo" src="images /logo.svg" alt="logo" />
+      </div>
 
-        <div class="score">
-          <label for="counter-score">Score</label>
-            <input type="text" id="counter-score" value="12" readonly>
-        </div>
-
+      <div class="score">
+        <label for="counter-score">Score</label>
+        <input type="text" id="counter-score" value="0" readonly />
+      </div>
     </div>
 
-    <div class="game">
+    <!-- start view -->
+    <div class="container" id="container">
+      <div class="game" id="game-three">
         <div class="do">
-            <img class="triangle" src="images /bg-triangle.svg" alt="triangle">
-           
-            <div class="paper">
-                <div class="circle1">
-                    <div class="circle2">
-                        <img class="circle-paper" src="images /icon-paper.svg" alt="">
-                    </div>
-                </div>
+          <img
+            id="tres"
+            class="triangle"
+            src="images /bg-triangle.svg"
+            alt="triangle"
+          />
+          <!-- paper main -->
+          <div class="paper">
+            <div class="circle1">
+              <button class="circle2" id="button-paper" onclick="play('paper')">
+                <img class="circle-paper" src="images /icon-paper.svg" alt="" />
+              </button>
             </div>
-<div class="scissors">
-    <div class="circle3">
-        <div class="circle4">
-<img class="circle-scissors" src="images /icon-scissors.svg" alt="scissors">
+          </div>
+          <!-- scissors main  -->
+          <div class="scissors">
+            <div class="circle3">
+              <button
+                class="circle4"
+                id="button-scissors"
+                onclick="play('scissors')"
+              >
+                <img
+                  class="circle-scissors"
+                  src="images /icon-scissors.svg"
+                  alt="scissors"
+                />
+              </button>
+            </div>
+          </div>
+          <!-- rock main -->
+          <div class="rock">
+            <div class="circle5">
+              <button class="circle6" id="button-rock" onclick="play('rock')">
+                <img
+                  class="circle-scissors"
+                  src="images /icon-rock.svg"
+                  alt="scissors"
+                />
+              </button>
+            </div>
+          </div>
+          <!--  -->
         </div>
+      </div>
     </div>
-</div>
-<div class="rock">
 
-<div class="circle5">
-    <div class="circle6">
-<img class="circle-scissors" src="images /icon-rock.svg" alt="scissors">
+    <!-- button rules -->
+    <div class="button">
+      <button id="show" class="rules">Rules</button>
     </div>
-</div>
-</div>
+    <!--  rules original game-->
+    <div class="window-rules" id="rulesDesktop">
+      <div class="header">
+        <h1>rules</h1>
+        <button id="lol" class="btn-close">
+          <img src="images /icon-close.svg" alt="close" class="icon-close" />
+        </button>
+      </div>
+      <img class="desktop-rules" src="images /image-rules.svg" alt="" />
     </div>
-</div>
-<div class="button">
-<button id="show" class="rules">Rules</button>
-</div>
-</div>
+  
+    <!-- window choice -->
+    <div class="picked" id="choices">
+      <!-- player choice -->
+      <section class="player-choose">
+        <h2>you picked</h2>
 
-<div class="window-rules" id="rulesDesktop">
-<div class="header">
-    <h1>rules</h1>
-    <button id="lol" class="btn-close">
-    <img src="images /icon-close.svg" alt="close" class="icon-close">
-</button>
-</div>
-<img class="desktop-rules" src="images /image-rules.svg" alt="" >
-</div>
+        <div class="choose-one" id="first">
+          <div class="circle1">
+            <button class="circle2">
+              <img class="circle-paper" src="images /icon-paper.svg" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div class="choose-two" id="two">
+          <div class="circle3">
+            <button class="circle4">
+              <img
+                class="circle-scissors"
+                src="images /icon-scissors.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="choose-three" id="three">
+          <div class="circle5">
+            <button class="circle6">
+              <img class="circle-rock" src="images /icon-rock.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- result -->
+      <div class="result-desktop" id="resultDesk">
+        <h1 id="result-win" class="win-desktop">you win</h1>
+        <h1 id="result-lose" class="lose-desktop">you lose</h1>
+        <button id="btn-again" class="play-again">play again</button>
+      </div>
+      <!-- computer choice -->
+      <section class="computer-choose" id="computer-guest">
+        <h2>the house picked</h2>
+        <div class="house-picked">
+          <div class="choose-one winner" id="computer-paper">
+            <div class="circle1">
+              <button class="circle2">
+                <img class="circle-paper" src="images /icon-paper.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="choose-two winner"  id="computer-scissors">
+            <div class="circle3">
+              <button class="circle4">
+                <img
+                  class="circle-scissors"
+                  src="images /icon-scissors.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="choose-three winner" id="computer-rock">
+            <div class="circle5">
+              <button class="circle6">
+                <img class="circle-rock" src="images /icon-rock.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <script src="main.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
