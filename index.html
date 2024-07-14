@@ -102,7 +102,7 @@
         <h2>you picked</h2>
 
         <div class="choose-one" id="first">
-          <div class="circle1">
+          <div class="circle1 winner" id="firstWinner">
             <button class="circle2">
               <img class="circle-paper" src="images /icon-paper.svg" alt="" />
             </button>
@@ -110,7 +110,7 @@
         </div>
 
         <div class="choose-two" id="two">
-          <div class="circle3">
+          <div class="circle3 winner" id="twoWinner">
             <button class="circle4">
               <img
                 class="circle-scissors"
@@ -122,7 +122,7 @@
         </div>
 
         <div class="choose-three" id="three">
-          <div class="circle5">
+          <div class="circle5 winner" id="threeWinner">
             <button class="circle6">
               <img class="circle-rock" src="images /icon-rock.svg" alt="" />
             </button>
@@ -133,22 +133,23 @@
       <div class="result-desktop" id="resultDesk">
         <h1 id="result-win" class="win-desktop">you win</h1>
         <h1 id="result-lose" class="lose-desktop">you lose</h1>
+        <h1 id="result-draw" class="draw-desktop"> draw</h1>
         <button id="btn-again" class="play-again">play again</button>
       </div>
       <!-- computer choice -->
       <section class="computer-choose" id="computer-guest">
         <h2>the house picked</h2>
         <div class="house-picked">
-          <div class="choose-one winner" id="computer-paper">
-            <div class="circle1">
+          <div class="choose-one" id="computer-paper">
+            <div class="circle1 winner" id="computer-paper-winner">
               <button class="circle2">
                 <img class="circle-paper" src="images /icon-paper.svg" alt="" />
               </button>
             </div>
           </div>
 
-          <div class="choose-two winner"  id="computer-scissors">
-            <div class="circle3">
+          <div class="choose-two"  id="computer-scissors">
+            <div class="circle3 winner" id="computer-scissors-winner">
               <button class="circle4">
                 <img
                   class="circle-scissors"
@@ -159,8 +160,8 @@
             </div>
           </div>
 
-          <div class="choose-three winner" id="computer-rock">
-            <div class="circle5">
+          <div class="choose-three" id="computer-rock">
+            <div class="circle5 winner" id="computer-rock-winner">
               <button class="circle6">
                 <img class="circle-rock" src="images /icon-rock.svg" alt="" />
               </button>

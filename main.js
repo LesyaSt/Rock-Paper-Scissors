@@ -42,15 +42,34 @@ const computerRock = document.getElementById("computer-rock");
 const computerGuest = document.getElementById("computer-guest");
 const win = document.getElementById('result-win');
 const lose = document.getElementById('result-lose');
-// const randomElement = Array.from(computerPaper, computerRock, computerScissors);
+const draw = document.getElementById('result-draw');
+
 
 const inputScore = document.getElementById('counter-score');
 const winDesktop = document.querySelector(".score");
 
+const resultDesktop = document.getElementById("resultDesk");
+const buttonPlayAgain = document.getElementById("btn-again");
+
+const container = document.getElementById('container');
+
+const oneShadow = document.getElementById('firstWinner');
+const twoShadow = document.getElementById('twoWinner');
+const threeShadow = document.getElementById('threeWinner');
+
+const paperShadow = document.getElementById('computer-paper-winner');
+const scissorsShadow =document.getElementById('computer-scissors-winner');
+const rockShadow = document.getElementById('computer-rock-winner');
+// 
 let winCount = 0;
 
 function updateScore(){
     winCount++;
+    inputScore.value = winCount;
+}
+
+function minusScore(){
+    winCount--;
     inputScore.value = winCount;
 }
 
@@ -72,8 +91,7 @@ rock.addEventListener("click", function () {
   three.style.display = "flex";
 });
 
-const resultDesktop = document.getElementById("resultDesk");
-const buttonPlayAgain = document.getElementById("btn-again");
+
 
 const elements = document.querySelectorAll(
   ".choose-one",
@@ -109,7 +127,7 @@ computerPaper.addEventListener("click", function () {
   });
 // 
 // 
-const container = document.getElementById('container');
+
 
 buttonPlayAgain.addEventListener("click", function () {
 //   game
@@ -121,7 +139,7 @@ buttonPlayAgain.addEventListener("click", function () {
 container.style.display = "flex";
   win.style.display = "none";
   lose.style.display = "none";
-
+draw.style.display = "none"
 //   
 first.style.display = "none";
 two.style.display = "none";
@@ -131,19 +149,15 @@ computerPaper.style.display = "none";
 computerScissors.style.display = "none";
 computerRock.style.display = "none";
 // 
-first.classList.remove("winner");
-two.classList.remove("winner");
-three.classList.remove("winner");
+oneShadow.classList.remove("winner");
+twoShadow.classList.remove("winner");
+threeShadow.classList.remove("winner");
 // 
-computerPaper.classList.remove("winner");
-computerScissors.classList.remove("winner");
-computerRock.classList.remove("winner");
+paperShadow.classList.remove("winner");
+scissorsShadow.classList.remove("winner");
+rockShadow.classList.remove("winner");
 });
 
-
-// function getRandomGuest() {
-//   return Math.floor(Math.random() * randomGuest.length);
-// }
 
 function getComputerChoice() {
   const choices = ['computerPaper', 'computerScissors', 'computerRock'];
@@ -162,7 +176,14 @@ computerRock.style.display = "none";
   if (computerChoice === "computerPaper") {
     win.style.display = "none";
     lose.style.display = "none";
-    
+    draw.style.display = "flex";
+    oneShadow.classList.remove("winner");
+twoShadow.classList.remove("winner");
+threeShadow.classList.remove("winner");
+// 
+paperShadow.classList.remove("winner");
+scissorsShadow.classList.remove("winner");
+rockShadow.classList.remove("winner");
     computerPaper.style.display = "flex";
     
   } else if (computerChoice === "computerScissors") {
@@ -181,35 +202,46 @@ computerRock.style.display = "none";
   (userChoice === 'paper' && computerChoice === 'computerPaper')) {
     win.style.display = "none";
     lose.style.display = "none";
+    draw.style.display = "flex";
     container.style.display = "none";
+    
     buttonPlayAgain.style.display = "flex";
-   
+    oneShadow.classList.remove("winner");
+    twoShadow.classList.remove("winner");
+    threeShadow.classList.remove("winner");
+    paperShadow.classList.remove("winner");
+scissorsShadow.classList.remove("winner");
+rockShadow.classList.remove("winner");
     
   } else if (
     (userChoice === 'rock' && computerChoice === 'computerScissors') ||
     (userChoice === 'scissors' && computerChoice === 'computerPaper') ||
-    (userChoice === 'paper' && computerChoice === 'computerRock')
+    (userChoice === 'paper' && computerChoice === 'computerRock') 
+   
   ) {
     win.style.display = "flex";
     lose.style.display = "none";
+    draw.style.display = "none";
     container.style.display = "none";
+    // 
+    oneShadow.classList.add("winner");
+    twoShadow.classList.add("winner");
+    threeShadow.classList.add("winner");
+    paperShadow.classList.remove("winner");
+scissorsShadow.classList.remove("winner");
+rockShadow.classList.remove("winner");
     updateScore();
   } else {
     win.style.display = "none";
     lose.style.display = "flex";
+    draw.style.display = "none";
     container.style.display = "none";
+    oneShadow.classList.remove("winner");
+twoShadow.classList.remove("winner");
+threeShadow.classList.remove("winner");
+    paperShadow.classList.add("winner");
+scissorsShadow.classList.add("winner");
+rockShadow.classList.add("winner");
+    minusScore();
   }
-}
-
-function addClickEventListener(){
-    paper.addEventListener("click", function(){
-        play('paper');
-    });
-    scissors.addEventListener("click", function(){
-        play('scissors');
-    });
-    rock.addEventListener("click", function(){
-        play('rock');
-    });
-
 }

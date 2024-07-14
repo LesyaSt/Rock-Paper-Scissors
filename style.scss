@@ -5,8 +5,6 @@
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-// @import url(mobile.scss);
-
 // colors
 
 $ScissorsGradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
@@ -34,91 +32,75 @@ $shadowCircle: #babfd4;
 
 $circlePicked: #192845;
 
-// .barlow-semi-condensed-semibold-italic {
-//     font-family: "Barlow Semi Condensed", sans-serif;
-//     font-weight: 600/700;
-//     font-style: italic;
-//   }
-
-// body {
-//   background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-// }
-
 @media screen and (max-width: 1366px) and (min-width: 999px) {
-    .body {
-        background: hsl(214, 47%, 23%);
+  .body {
+    background: hsl(214, 47%, 23%);
+    display: flex;
+    justify-content: center;
+  }
+
+  .base-info {
+    display: flex;
+    width: 700px;
+    height: 150px;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid $HeaderOutline;
+    border-radius: 10px;
+    background: none;
+    margin-top: 30px;
+
+    .rps {
+      padding: 20px 0 15px 20px;
+    }
+    .score {
+      margin-right: 20px;
+
+      height: 90px;
+      width: 100px;
+
+      background-color: $white;
+      border-radius: 10px;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label {
         display: flex;
         justify-content: center;
+        text-transform: uppercase;
+        color: $ScoreText;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-top: 10px;
       }
-    //   .winner{
-    //     background: linear-gradient(to right, #ff7e5f, #feb47b);
-    //   }
-      .base-info {
-        
-        display: flex;
-        width: 700px;
-        height: 150px;
-position: fixed;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border: 2px solid $HeaderOutline;
-        border-radius: 10px;
+      input {
+        width: 60px;
+        height: 50px;
+
+        border: none;
+        font-size: 52px;
+        font-weight: 700;
+        color: $DarkText;
+        text-align: center;
         background: none;
-        margin-top: 30px;
-        // padding: 20px 0 15px 20px;
-        .rps {
-          padding: 20px 0 15px 20px;
-        }
-        .score {
-          margin-right: 20px;
-  
-          height: 90px;
-          width: 100px;
-  
-          background-color: $white;
-          border-radius: 10px;
-          border: none;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-  
-          label {
-            display: flex;
-            justify-content: center;
-            text-transform: uppercase;
-            color: $ScoreText;
-            font-size: 14px;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-top: 10px;
-          }
-          input {
-            width: 60px;
-            height: 50px;
-            //     border-radius: 10px;
-            border: none;
-            font-size: 52px;
-            font-weight: 700;
-            color: $DarkText;
-            text-align: center;
-            background: none;
-          }
-        }
       }
-    .container {
-    // background-color: red;
-    // display: grid;
+    }
+  }
+  .container {
     width: 700px;
-    // height: 550px;
+
     position: relative;
     top: 200px;
     left: 0px;
     padding: 10px;
-   
-// z-index: -1;
+
     .game {
-    //   background-color: orange;
+      //   background-color: orange;
       width: 100%;
       height: 350px;
       margin-top: 25px;
@@ -129,7 +111,6 @@ position: fixed;
         width: 500px;
         height: 320px;
         // background-color: bisque;
-// margin-left: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -137,7 +118,7 @@ position: fixed;
         .triangle {
           width: 300px;
           height: 200px;
-          // grid-column: 1 / 2;
+
           position: absolute;
           top: 80px;
           left: 100px;
@@ -145,7 +126,7 @@ position: fixed;
         }
 
         .paper {
-        //   background-color: palevioletred;
+          //   background-color: palevioletred;
           display: flex;
           justify-content: center;
           .circle1 {
@@ -171,16 +152,16 @@ position: fixed;
                 width: 60px;
                 height: 60px;
                 &:hover {
-                    width: 70px;
-                    height: 70px;
-                    transition: .3s;
+                  width: 70px;
+                  height: 70px;
+                  transition: 0.3s;
                 }
               }
             }
           }
         }
         .scissors {
-        //   background-color: salmon;
+          //   background-color: salmon;
           display: flex;
           justify-content: center;
           .circle3 {
@@ -206,17 +187,16 @@ position: fixed;
                 width: 60px;
                 height: 60px;
                 &:hover {
-                    width: 70px;
-                    height: 70px;
-                    transition: .3s;
+                  width: 70px;
+                  height: 70px;
+                  transition: 0.3s;
                 }
               }
             }
           }
         }
         .rock {
-        //   background-color: khaki;
-          // grid-row: 2;
+          //   background-color: khaki;
           grid-column: 1 / 3;
           display: flex;
           justify-content: center;
@@ -244,9 +224,9 @@ position: fixed;
                 width: 60px;
                 height: 60px;
                 &:hover {
-                    width: 70px;
-                    height: 70px;
-                    transition: .3s;
+                  width: 70px;
+                  height: 70px;
+                  transition: 0.3s;
                 }
               }
             }
@@ -254,7 +234,6 @@ position: fixed;
         }
       }
     }
-
   }
   .rules {
     width: 120px;
@@ -270,13 +249,12 @@ position: fixed;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    
   }
 
-  .window-rules{
+  .window-rules {
     position: fixed;
     top: 170px;
-    // left: 450px;
+
     background-color: $white;
     border-radius: 5px;
     padding: 20px;
@@ -284,189 +262,192 @@ position: fixed;
     display: none;
     flex-direction: column;
     z-index: 1;
-    .desktop-rules{
-        margin-top: 20px;
-        margin-left: 6%;
-        width: 350px;
-        height: 300px;
+    .desktop-rules {
+      margin-top: 20px;
+      margin-left: 6%;
+      width: 350px;
+      height: 300px;
     }
-    .header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        h1{
-            text-transform: uppercase;
-            color: $DarkText;
-        }
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        text-transform: uppercase;
+        color: $DarkText;
+      }
     }
-    .btn-close{
-        border: none;
-        // color: black;
+    .btn-close {
+      border: none;
     }
-    .icon-close{
-        width: 20px;
-        height: 20px;
-        // filter: black;
+    .icon-close {
+      width: 20px;
+      height: 20px;
     }
   }
-//   
+  //
   .picked {
-    // background-color: plum; 
-    // opacity: 0.3;
+    // background-color: plum;
+
     width: 700px;
     height: 350px;
     position: fixed;
     top: 200px;
-    // left: 23%;
-    // right: 30%;
-   
-display: none;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(2, 1fr);
 
-.player-choose {
-// background-color: red;
-grid-column: 1 / 2;
-grid-row: 1 / 3;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-h2 {
-    font-size: 22px;
-    color: $white;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 2px;
-    padding-bottom: 50px;
-}
-.choose-one{
-    grid-column: 1;
-    // background-color: lightblue;
     display: none;
-.circle1 {
-    border-radius: 50%;
-    width: 170px;
-    height: 170px;
-    background-color: $circle1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px -5px $shadowCircle1;
-    .circle2 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    .winner {
+      // background: red;
       border-radius: 50%;
-      width: 130px;
-      height: 130px;
-      background-color: $white;
+      filter: drop-shadow(0px 0px 30px hsl(230, 89%, 65%));
+    }
+    .player-choose {
+      // background-color: red;
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-shadow: inset 0px 5px $shadowCircle;
-      border: none;
-      .circle-paper {
-        width: 60px;
-        height: 60px;
-      
+      h2 {
+        font-size: 22px;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding-bottom: 50px;
+      }
+      .choose-one {
+        grid-column: 1;
+        // background-color: lightblue;
+        display: none;
+        .circle1 {
+          border-radius: 50%;
+          width: 170px;
+          height: 170px;
+          background-color: $circle1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0px -5px $shadowCircle1;
+          .circle2 {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px 5px $shadowCircle;
+            border: none;
+            .circle-paper {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+      }
+      .choose-two {
+        // background-color: lemonchiffon;
+        display: none;
+
+        .circle3 {
+          border-radius: 50%;
+          width: 170px;
+          height: 170px;
+          background-color: $circle3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0px -5px $shadowCircle3;
+          .circle4 {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px 5px $shadowCircle;
+            border: none;
+            .circle-scissors {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+      }
+      .choose-three {
+        // background-color: lightcoral;
+        display: none;
+        .circle5 {
+          border-radius: 50%;
+          width: 170px;
+          height: 170px;
+          background-color: $circle5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0px -5px $shadowCircle5;
+          .circle6 {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px 5px $shadowCircle;
+            border: none;
+            .circle-rock {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
       }
     }
-  }
-}
-.choose-two{
-    // grid-column: 1;
-    // background-color: lemonchiffon;
-    display: none;
-    .circle3 {
-        border-radius: 50%;
-        width: 170px;
-        height: 170px;
-        background-color: $circle3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle3;
-        .circle4 {
-          border-radius: 50%;
-          width: 130px;
-          height: 130px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-scissors {
-            width: 60px;
-            height: 60px;
-           
-          }
-        }
-      }
-}
- .choose-three {
-    // grid-column: 1;
-    // background-color: lightcoral;
-    display: none;
-    .circle5 {
-        border-radius: 50%;
-        width: 170px;
-        height: 170px;
-        background-color: $circle5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle5;
-        .circle6 {
-          border-radius: 50%;
-          width: 130px;
-          height: 130px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-rock {
-            width: 60px;
-            height: 60px;
-           
-          }
-        }
-      }
-}
-  }
-  .result-desktop {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    // width: 100%;
-    height: 350px;
-    // position: fixed;
-    // top: 48%;
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    // background-color: #9c1432;
+    .result-desktop {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
 
-    .win-desktop {
+      height: 350px;
+
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      // background-color: #9c1432;
+
+      .win-desktop {
         text-transform: uppercase;
         color: $white;
         font-weight: 700;
         letter-spacing: 2px;
         font-size: 48px;
         display: none;
-    }
-    .lose-desktop {
+      }
+      .lose-desktop {
         text-transform: uppercase;
         color: $white;
         font-weight: 700;
         letter-spacing: 2px;
         font-size: 48px;
         display: none;
-    }
+      }
+      .draw-desktop {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 48px;
+        display: none;
+      }
 
-    .play-again {
+      .play-again {
         width: 200px;
         height: 50px;
         border-radius: 10px;
@@ -480,213 +461,198 @@ letter-spacing: 2px;
         display: flex;
         justify-content: center;
         align-items: center;
-        
-         &:hover{
-color: tomato;
+
+        &:hover {
+          color: red;
         }
+      }
     }
-}
-  .computer-choose{
-    // background-color: black;
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    h2 {
+    .computer-choose {
+      // background-color: black;
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h2 {
         color: $white;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
         padding-bottom: 50px;
         font-size: 22px;
-    }
-
-    .house-picked{
-width: 170px;
-height: 170px;
-background-color: $circlePicked;
-
-border-radius: 50%;
-z-index: -1;
-.choose-one{
-    grid-column: 1;
-    // background-color: lightblue;
-    display: none;
-.circle1 {
-    border-radius: 50%;
-    width: 170px;
-    height: 170px;
-    background-color: $circle1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px -5px $shadowCircle1;
-    .circle2 {
-      border-radius: 50%;
-      width: 130px;
-      height: 130px;
-      background-color: $white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: inset 0px 5px $shadowCircle;
-      border: none;
-      .circle-paper {
-        width: 60px;
-        height: 60px;
-       
       }
-    }
-  }
-}
-.choose-two{
-    // grid-column: 1;
-    // background-color: lemonchiffon;
-    display: none;
-    .circle3 {
-        border-radius: 50%;
+
+      .house-picked {
         width: 170px;
         height: 170px;
-        background-color: $circle3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle3;
-        .circle4 {
-          border-radius: 50%;
-          width: 130px;
-          height: 130px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-scissors {
-            width: 60px;
-            height: 60px;
-            
+        background-color: $circlePicked;
+
+        border-radius: 50%;
+        z-index: -1;
+        .choose-one {
+          grid-column: 1;
+          // background-color: lightblue;
+          display: none;
+          .circle1 {
+            border-radius: 50%;
+            width: 170px;
+            height: 170px;
+            background-color: $circle1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle1;
+            .circle2 {
+              border-radius: 50%;
+              width: 130px;
+              height: 130px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-paper {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+        .choose-two {
+          // background-color: lemonchiffon;
+          display: none;
+          .circle3 {
+            border-radius: 50%;
+            width: 170px;
+            height: 170px;
+            background-color: $circle3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle3;
+            .circle4 {
+              border-radius: 50%;
+              width: 130px;
+              height: 130px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-scissors {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+        .choose-three {
+          // background-color: lightcoral;
+          display: none;
+          .circle5 {
+            border-radius: 50%;
+            width: 170px;
+            height: 170px;
+            background-color: $circle5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle5;
+            .circle6 {
+              border-radius: 50%;
+              width: 130px;
+              height: 130px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-rock {
+                width: 60px;
+                height: 60px;
+              }
+            }
           }
         }
       }
-}
- .choose-three {
-    // grid-column: 1;
-    // background-color: lightcoral;
-    display: none;
-    .circle5 {
-        border-radius: 50%;
-        width: 170px;
-        height: 170px;
-        background-color: $circle5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle5;
-        .circle6 {
-          border-radius: 50%;
-          width: 130px;
-          height: 130px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-rock {
-            width: 60px;
-            height: 60px;
-           
-          }
-        }
-      }
-}
     }
   }
-
-  }
-
 }
 
+//
 
+//
 
+//
 
+//
 
-
-
-// 
-
-
-// 
-
-
-// 
-
-// 
-
-// 
+//
 
 // mobile version
 
 @media screen and (max-width: 568px) {
-    .body {
-        background: hsl(214, 47%, 23%);
+  .body {
+    background: hsl(214, 47%, 23%);
+  }
+  .base-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid $HeaderOutline;
+    border-radius: 10px;
+    background: none;
+    margin: 20px 20px 0 20px;
+
+    .rps {
+      padding: 20px 0 15px 20px;
+
+      .logo {
+        height: 70px;
+      }
     }
-    .base-info {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      border: 2px solid $HeaderOutline;
+    .score {
+      margin-right: 20px;
+
+      height: 90px;
+      width: 100px;
+
+      background-color: $white;
       border-radius: 10px;
-      background: none;
-      margin: 20px 20px 0 20px;
-      
-      .rps {
-        padding: 20px 0 15px 20px;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-        .logo {
-          height: 70px;
-        }
-      }
-      .score {
-        margin-right: 20px;
-
-        height: 90px;
-        width: 100px;
-
-        background-color: $white;
-        border-radius: 10px;
-        border: none;
+      label {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        label {
-          display: flex;
-          justify-content: center;
-          text-transform: uppercase;
-          color: $ScoreText;
-          font-size: 14px;
-          letter-spacing: 2px;
-          font-weight: 600;
-          margin-top: 10px;
-        }
-        input {
-          width: 60px;
-          height: 50px;
-          border: none;
-          font-size: 52px;
-          font-weight: 700;
-          color: $DarkText;
-          text-align: center;
-          background: none;
-        }
+        justify-content: center;
+        text-transform: uppercase;
+        color: $ScoreText;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+      input {
+        width: 60px;
+        height: 50px;
+        border: none;
+        font-size: 52px;
+        font-weight: 700;
+        color: $DarkText;
+        text-align: center;
+        background: none;
       }
     }
-    
+  }
+
   .container {
     // background-color: red;
     width: 350px;
@@ -697,168 +663,158 @@ z-index: -1;
     padding: 10px;
 
     .game {
-        // background-color: orange;
-        width: 100%;
-        height: 350px;
-        
-        display: flex;
-        
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-        
-        .do {
-          width: 430px;
-          height: 300px;
+      // background-color: orange;
+      width: 100%;
+      height: 350px;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+
+      .do {
+        width: 430px;
+        height: 300px;
         //   background-color: bisque;
-//   margin-left: 5%;
-//   margin-right: 10%;
-//   padding: 5px;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: repeat(2, 1fr);
-          position: relative;
-          .triangle {
-            width: 200px;
-            height: 150px;
-            // grid-column: 1 / 2;
-            position: absolute;
-            top: 90px;
-            left: 90px;
-            z-index: -1;
-          }
-  
-          .paper {
-            // background-color: palevioletred;
-            display: flex;
-            justify-content: left;
-            width: 190px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
+        .triangle {
+          width: 200px;
+          height: 150px;
+          position: absolute;
+          top: 90px;
+          left: 90px;
+          z-index: -1;
+        }
+
+        .paper {
+          // background-color: palevioletred;
+          display: flex;
+          justify-content: left;
+          width: 190px;
+          height: 160px;
+          .circle1 {
+            border-radius: 50%;
+            width: 160px;
             height: 160px;
-            .circle1 {
-              border-radius: 50%;
-              width: 160px;
-              height: 160px;
-              background-color: $circle1;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              box-shadow: inset 0px -5px $shadowCircle1;
-              .circle2 {
-                border-radius: 50%;
-                width: 120px;
-                height: 110px;
-                background-color: $white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: inset 0px 5px $shadowCircle;
-                border: none;
-                .circle-paper {
-                  width: 60px;
-                  height: 60px;
-                 
-                }
-              }
-            }
-          }
-          .scissors {
-            // background-color: salmon;
-            display: flex;
-            justify-content: right;
-            width: 190px;
-            .circle3 {
-              border-radius: 50%;
-              width: 160px;
-              height: 160px;
-              background-color: $circle3;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              box-shadow: inset 0px -5px $shadowCircle3;
-              .circle4 {
-                border-radius: 50%;
-                width: 110px;
-                height: 110px;
-                background-color: $white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: inset 0px 5px $shadowCircle;
-                border: none;
-                .circle-scissors {
-                  width: 60px;
-                  height: 60px;
-                }
-              }
-            }
-          }
-          .rock {
-            // background-color: khaki;
-            // grid-row: 2;
-            grid-column: 1 / 3;
+            background-color: $circle1;
             display: flex;
             justify-content: center;
-            // align-content: end;
-            
-            height: 180px;
-            .circle5 {
-                margin-top: 10px;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle1;
+            .circle2 {
               border-radius: 50%;
-              width: 160px;
-              height: 160px;
-              background-color: $circle5;
+              width: 120px;
+              height: 110px;
+              background-color: $white;
               display: flex;
               justify-content: center;
               align-items: center;
-              box-shadow: inset 0px -5px $shadowCircle5;
-              .circle6 {
-                border-radius: 50%;
-                width: 110px;
-                height: 110px;
-                background-color: $white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: inset 0px 5px $shadowCircle;
-                border: none;
-                .circle-scissors {
-                  width: 60px;
-                  height: 60px;
-                }
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-paper {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+        .scissors {
+          // background-color: salmon;
+          display: flex;
+          justify-content: right;
+          width: 190px;
+          .circle3 {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            background-color: $circle3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle3;
+            .circle4 {
+              border-radius: 50%;
+              width: 110px;
+              height: 110px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-scissors {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+        .rock {
+          grid-column: 1 / 3;
+          display: flex;
+          justify-content: center;
+
+          height: 180px;
+          .circle5 {
+            margin-top: 10px;
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            background-color: $circle5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle5;
+            .circle6 {
+              border-radius: 50%;
+              width: 110px;
+              height: 110px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-scissors {
+                width: 60px;
+                height: 60px;
               }
             }
           }
         }
       }
-    
-
+    }
   }
-  .button{
+  .button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: fixed;
     left: 30%;
     right: 30%;
-    bottom: 50px;
-    // margin-top: 10px;
-   
-          .rules {
-            width: 150px;
-            height: 50px;
-            margin: 20px;
-            
-            font-size: 22px;
-            
-            background: none;
-            border: 3px solid $HeaderOutline;
-            border-radius: 10px;
-            color: $white;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-          }
-        }
+    bottom: 40px;
+
+    .rules {
+      width: 150px;
+      height: 50px;
+      margin: 20px;
+
+      font-size: 22px;
+
+      background: none;
+      border: 3px solid $HeaderOutline;
+      border-radius: 10px;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
   .window-rules {
     position: fixed;
     top: 240px;
@@ -869,31 +825,30 @@ z-index: -1;
     width: 95%;
     display: none;
     flex-direction: column;
-   z-index: 1;
-    .desktop-rules{
-        margin-top: 20px;
-        margin-left: 30px;
-        width: 300px;
-        height: 280px;
+    z-index: 1;
+    .desktop-rules {
+      margin-top: 20px;
+      margin-left: 30px;
+      width: 300px;
+      height: 280px;
     }
-    .header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        h1{
-            text-transform: uppercase;
-            color: $DarkText;
-        }
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        text-transform: uppercase;
+        color: $DarkText;
+      }
     }
-    .btn-close{
-        border: none;
-        // color: black;
+    .btn-close {
+      border: none;
     }
-    .icon-close{
-        width: 20px;
-        height: 20px;
-        filter: black;
+    .icon-close {
+      width: 20px;
+      height: 20px;
+      filter: black;
     }
   }
   .window-bonus-rules {
@@ -906,190 +861,193 @@ z-index: -1;
     width: 90%;
     display: none;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
+
     z-index: 1;
-    .desktop-bonus-rules{
-        margin-top: 10px;
-        margin-left: 50px;
-        width: 310px;
-        height: 300px;
+    .desktop-bonus-rules {
+      margin-top: 10px;
+      margin-left: 50px;
+      width: 310px;
+      height: 300px;
     }
     .header-bonus {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        h1{
-            text-transform: uppercase;
-            color: $DarkText;
-        }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        text-transform: uppercase;
+        color: $DarkText;
+      }
     }
-    .btn-close-bonus{
-        border: none;
-        // color: black;
+    .btn-close-bonus {
+      border: none;
     }
-    .icon-close-bonus{
-        width: 20px;
-        height: 20px;
-        filter: black;
+    .icon-close-bonus {
+      width: 20px;
+      height: 20px;
+      filter: black;
     }
   }
   .picked {
     // background-color: plum;
-    // opacity: 0.3;
     width: 400px;
     height: 350px;
     position: fixed;
     top: 230px;
     left: 5%;
     right: 15%;
-    // right: 30%;
+
     z-index: -1;
-   
-display: none;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
 
-.player-choose {
-// background-color: red;
-grid-column: 1 / 2;
-grid-row: 1 / 3;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-h2 {
-    font-size: 20px;
-    color: $white;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 2px;
-    padding-bottom: 50px;
-}
-.choose-one{
-    grid-column: 1;
-    // background-color: lightblue;
     display: none;
-.circle1 {
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    background-color: $circle1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px -5px $shadowCircle1;
-    .circle2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    .winner {
+      // background: red;
       border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      background-color: $white;
+      filter: drop-shadow(0px 0px 30px hsl(230, 89%, 65%));
+    }
+    .player-choose {
+      // background-color: red;
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-shadow: inset 0px 5px $shadowCircle;
-      border: none;
-      .circle-paper {
-        width: 70px;
-        height: 70px;
-      }
-    }
-  }
-}
-.choose-two{
-    // grid-column: 1;
-    // background-color: lemonchiffon;
-    display: none;
-    .circle3 {
-        border-radius: 50%;
-        width: 160px;
-        height: 160px;
-        background-color: $circle3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle3;
-        .circle4 {
-          border-radius: 50%;
-          width: 120px;
-          height: 120px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-scissors {
-            width: 70px;
-            height: 70px;
-          }
-        }
-      }
-}
- .choose-three {
-    // grid-column: 1;
-    // background-color: lightcoral;
-    display: none;
-    .circle5 {
-        border-radius: 50%;
-        width: 160px;
-        height: 160px;
-        background-color: $circle5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle5;
-        .circle6 {
-          border-radius: 50%;
-          width: 120px;
-          height: 120px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-rock {
-            width: 70px;
-            height: 70px;
-          }
-        }
-      }
-}
-  }
-  .result-desktop {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-   
-    grid-column: 1 / 4;
-    // grid-row: 3;
-    // background-color: #9c1432;
-    margin-top: 60px;
-    
-z-index: 1000;
-    .win-desktop {
-        text-transform: uppercase;
-        color: $white;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 48px;
-        display: none;
-    }
-    .lose-desktop {
-        text-transform: uppercase;
-        color: $white;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 48px;
-        display: none;
-    }
 
-    .play-again {
+      h2 {
+        font-size: 20px;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding-bottom: 50px;
+      }
+      .choose-one {
+        grid-column: 1;
+        // background-color: lightblue;
+        display: none;
+        .circle1 {
+          border-radius: 50%;
+          width: 160px;
+          height: 160px;
+          background-color: $circle1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0px -5px $shadowCircle1;
+          .circle2 {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px 5px $shadowCircle;
+            border: none;
+            .circle-paper {
+              width: 70px;
+              height: 70px;
+            }
+          }
+        }
+      }
+      .choose-two {
+        display: none;
+        .circle3 {
+          border-radius: 50%;
+          width: 160px;
+          height: 160px;
+          background-color: $circle3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0px -5px $shadowCircle3;
+          .circle4 {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px 5px $shadowCircle;
+            border: none;
+            .circle-scissors {
+              width: 70px;
+              height: 70px;
+            }
+          }
+        }
+      }
+      .choose-three {
+        display: none;
+        .circle5 {
+          border-radius: 50%;
+          width: 160px;
+          height: 160px;
+          background-color: $circle5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0px -5px $shadowCircle5;
+          .circle6 {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px 5px $shadowCircle;
+            border: none;
+            .circle-rock {
+              width: 70px;
+              height: 70px;
+            }
+          }
+        }
+      }
+    }
+    .result-desktop {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      grid-column: 1 / 4;
+
+      margin-top: 60px;
+
+      z-index: 1000;
+      .win-desktop {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 48px;
+        display: none;
+      }
+      .lose-desktop {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 48px;
+        display: none;
+      }
+      .draw-desktop {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 48px;
+        display: none;
+      }
+      .play-again {
         width: 200px;
         height: 50px;
         border-radius: 10px;
@@ -1100,137 +1058,125 @@ z-index: 1000;
         margin-top: 20px;
         font-weight: 600;
         color: $DarkText;
- 
+
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1000;
+      }
     }
-}
-  .computer-choose{
-    // background-color: black;
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    h2 {
+    .computer-choose {
+      // background-color: black;
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h2 {
         color: $white;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
         padding-bottom: 50px;
         font-size: 20px;
         grid-row: 1 / 3;
-    }
-
-    .house-picked{
-// width: 160px;
-// height: 100px;
-background-color: $circlePicked;
-
-border-radius: 50%;
-.choose-one{
-    // grid-column: 1;
-    // background-color: lightblue;
-    display: none;
-    justify-content: center;
-.circle1 {
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    background-color: $circle1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px -5px $shadowCircle1;
-    .circle2 {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      background-color: $white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: inset 0px 5px $shadowCircle;
-      border: none;
-      .circle-paper {
-        width: 70px;
-        height: 70px;
       }
-    }
-  }
-}
-.choose-two{
-    // grid-column: 1;
-    // background-color: lemonchiffon;
-    display: none;
-    .winner{
-        // background: $LizardGradient;
+
+      .house-picked {
+        background-color: $circlePicked;
+
         border-radius: 50%;
-        // z-index: 5;
-    }
-    .circle3 {
-        border-radius: 50%;
-        width: 160px;
-        height: 160px;
-        background-color: $circle3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle3;
-        .circle4 {
-          border-radius: 50%;
-          width: 120px;
-          height: 120px;
-          background-color: $white;
-          display: flex;
+        .choose-one {
+          // background-color: lightblue;
+          display: none;
           justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-scissors {
-            width: 70px;
-            height: 70px;
+          .circle1 {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            background-color: $circle1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle1;
+            .circle2 {
+              border-radius: 50%;
+              width: 120px;
+              height: 120px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-paper {
+                width: 70px;
+                height: 70px;
+              }
+            }
+          }
+        }
+        .choose-two {
+          // background-color: lemonchiffon;
+          display: none;
+
+          .circle3 {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            background-color: $circle3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle3;
+            .circle4 {
+              border-radius: 50%;
+              width: 120px;
+              height: 120px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-scissors {
+                width: 70px;
+                height: 70px;
+              }
+            }
+          }
+        }
+        .choose-three {
+          // background-color: lightcoral;
+          display: none;
+          .circle5 {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            background-color: $circle5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px $shadowCircle5;
+            .circle6 {
+              border-radius: 50%;
+              width: 120px;
+              height: 120px;
+              background-color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: inset 0px 5px $shadowCircle;
+              border: none;
+              .circle-rock {
+                width: 70px;
+                height: 70px;
+              }
+            }
           }
         }
       }
-}
- .choose-three {
-    // grid-column: 1;
-    // background-color: lightcoral;
-    display: none;
-    .circle5 {
-        border-radius: 50%;
-        width: 160px;
-        height: 160px;
-        background-color: $circle5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px -5px $shadowCircle5;
-        .circle6 {
-          border-radius: 50%;
-          width: 120px;
-          height: 120px;
-          background-color: $white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: inset 0px 5px $shadowCircle;
-          border: none;
-          .circle-rock {
-            width: 70px;
-            height: 70px;
-          }
-        }
-      }
-}
     }
   }
-  
-  }
-
-
 }
