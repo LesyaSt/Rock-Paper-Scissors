@@ -5,7 +5,7 @@
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-@media screen and (max-width: 1366px) and (min-width: 999px) {
+@media screen and (min-width: 1024px) {
   .body {
     background: hsl(214, 47%, 23%);
     display: flex;
